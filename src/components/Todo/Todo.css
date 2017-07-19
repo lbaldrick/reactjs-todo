@@ -1,9 +1,9 @@
 .todo-details-section {
     display: flex;
-    padding: 0.5em 0 0 0;
+    align-items: center;
+    height: 100%;
     font-size: 16px;
     font-weight: bold;
-    height: 3em;
 }
 
 .todo-details-section div {
@@ -49,11 +49,13 @@
 .todo-details-section-details_title {
     width: 6em;
     text-align: left;
+    margin-right: 1em;
 }
 
 .todo-details-section-details_task {
     width: 20em;
     text-align: left;
+    margin-right: 1em;
 }
 
 .todo-details-section-details_buttons {
@@ -62,4 +64,8 @@
 
 .--hidden {
     visibility: hidden;
+}
+
+.todo-details-section_form .todo-form-section {
+    padding: 0;
 }

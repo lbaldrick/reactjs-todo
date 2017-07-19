@@ -23,12 +23,15 @@ const Todo = ({ todo, toggleTodoEdit, onDeleteTodo, onCompleteTodo, onPendingTod
                     </button>
                 </div>
                 <div className='todo-details-section-details_buttons_completed'>
-                    <button className='todo-details-section-details_buttons_completed_button' onClick={ () => onCompleteTodo(todo.id) }>
+                    <button className={!todo.completed ? "todo-details-section-details_buttons_pending_button"
+                        : "todo-details-section-details_buttons_pending_button --hidden"} onClick={ () => onCompleteTodo(todo.id) }>
                         Completed
                     </button>
                 </div>
                 <div className='todo-details-section-details_buttons_pending'>
-                    <button className='todo-details-section-details_buttons_pending_button'  onClick={ () => onPendingTodo(todo.id) }>
+                    <button className={todo.completed ? "todo-details-section-details_buttons_pending_button"
+                        : "todo-details-section-details_buttons_pending_button --hidden"}
+                            onClick={ () => onPendingTodo(todo.id) }>
                         Pending
                     </button>
                 </div>
@@ -46,8 +49,8 @@ const Todo = ({ todo, toggleTodoEdit, onDeleteTodo, onCompleteTodo, onPendingTod
                     id={ todo.id }
                     title={ todo.title }
                     task={ todo.task }
-                    toggleTodoEdit={ toggleTodoEdit }
-                    onUpdateTodo={ onUpdateTodo }
+                    toggleForm={ toggleTodoEdit }
+                    onSubmitTodo={ onUpdateTodo }
            />
         </section>
     </section>

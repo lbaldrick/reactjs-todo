@@ -6,7 +6,7 @@ const handleValueChange = (event, id) => {
     event.preventDefault();
 }
 
-const TodoForm = ( { id, title, task, toggleTodoEdit, onUpdateTodo, } ) => {
+const TodoForm = ( { id, title, task, toggleForm, onSubmitTodo, } ) => {
     return  <div className="todo-form-section">
         <div className='todo-form-section_fields'>
             <div className='todo-form-section_fields_field'>
@@ -24,12 +24,12 @@ const TodoForm = ( { id, title, task, toggleTodoEdit, onUpdateTodo, } ) => {
                 />
             </div>
             <div className='todo-form-section_fields_hide-form'>
-                <button className='todo-form-section_fields_hide-form_btn'onClick={() => toggleTodoEdit(id)} >
+                <button className='todo-form-section_fields_hide-form_btn'onClick={() => toggleForm(id)} >
                     Close
                 </button>
             </div>
             <div className='todo-form-add-section_fields_submit-form'>
-                <button className='todo-form-add-section_fields_submit-form_btn'onClick={() => {onUpdateTodo(id, this.title || title, this.task || task)}}>
+                <button className='todo-form-add-section_fields_submit-form_btn'onClick={() => {onSubmitTodo(id, this.title || title, this.task || task)}}>
                     Submit
                 </button>
             </div>

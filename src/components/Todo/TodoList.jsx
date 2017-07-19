@@ -1,6 +1,7 @@
 import React from 'react';
 import Todo from './Todo';
-import { updateTodo, addTodo, deleteTodo, toggleTodoStatus, toggleTodoEdit, } from '../../redux/actions/TodoActions';
+import TodoForm from './TodoForm';
+import { updateTodo, addTodo, deleteTodo, toggleTodoStatus, toggleTodoEdit, toggleTodoAdd, } from '../../redux/actions/TodoActions';
 import './TodoList.css';
 
 import { connect } from 'react-redux';
@@ -8,6 +9,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
     return {
         todos: state.todos,
+        isAdding: state.isAdding,
     }
 };
 
@@ -32,12 +34,16 @@ const mapDispatchToProps = dispatch => {
             dispatch(updateTodo(id, title, task));
         },
 
-        onAddTodo: (title, task) => {
+        onAddTodo: (id, title, task) => {
             dispatch(addTodo(title, task));
         },
 
         toggleTodoEdit(id) {
             dispatch(toggleTodoEdit(id));
+        },
+
+        toggleTodoAdd(id) {
+            dispatch(toggleTodoAdd(id));
         },
     }
 };
@@ -63,6 +69,24 @@ class TodoList extends React.PureComponent {
                     })
                 }
             </ul>
+
+            {
+                !this.props.isAdding && <div className='todo-list-add-todo'>
+                    <button className='todo-list-add-todo-button' onClick={ () => this.props.toggleTodoAdd() }>
+                        Add Task
+                    </button>
+                </div>
+            }
+            {
+                this.props.isAdding && <TodoForm
+                    id={ "" }
+                    title={ "" }
+                    task={ "" }
+                    toggleForm={ this.props.toggleTodoAdd }
+                    onSubmitTodo={ this.props.onAddTodo }
+                />
+            }
+
         </div>
     }
 

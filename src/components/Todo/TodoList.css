@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+.todo-list li {
+    height: 2.5em;
+}
+
+.todo-list li:nth-child(odd) {
+    background-color: #daf5da;
+}
+
 .todo-list-header {
     display: flex;
     height: 2em;
@@ -13,4 +21,9 @@
     color: #fff;
     font-weight: bold;
     font-size: 18px;
+}
+
+.todo-list-add-todo-button {
+    display: flex;
+    margin-left: 1em;
 }

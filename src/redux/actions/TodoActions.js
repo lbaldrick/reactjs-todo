@@ -4,6 +4,7 @@ const TODO_ACTION_ENUM = {
     DELETE_TODO: 'DELETE_TODO',
     TOGGLE_TODO_STATUS: 'CHANGE_TODO_STATUS',
     TOGGLE_EDIT_TODO: 'TOGGLE_EDIT_TODO',
+    TOGGLE_ADD_TODO: 'TOGGLE_ADD_TODO',
 };
 
 function updateTodo(id, title, task) {
@@ -41,4 +42,11 @@ function toggleTodoEdit(id) {
     };
 }
 
-export { TODO_ACTION_ENUM, updateTodo, addTodo, deleteTodo, toggleTodoStatus, toggleTodoEdit, }
+function toggleTodoAdd(title, task) {
+    return {
+        type: TODO_ACTION_ENUM.TOGGLE_ADD_TODO,
+        payload: { title, task },
+    };
+}
+
+export { TODO_ACTION_ENUM, updateTodo, addTodo, deleteTodo, toggleTodoStatus, toggleTodoEdit, toggleTodoAdd, }
