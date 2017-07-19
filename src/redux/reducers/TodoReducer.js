@@ -94,6 +94,7 @@ const updateTodo = (action, state) => {
     todos[index] = Object.assign( {}, todo, {
         title: payload.title,
         task: payload.task,
+        isEditing: false,
     });
 
     return Object.assign({} , state, { todos: [].concat(todos), }); ;
