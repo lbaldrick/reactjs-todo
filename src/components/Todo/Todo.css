@@ -1,0 +1,65 @@
+.todo-details-section {
+    display: flex;
+    padding: 0.5em 0 0 0;
+    font-size: 16px;
+    font-weight: bold;
+    height: 3em;
+}
+
+.todo-details-section div {
+    padding: 0 0 0 1em;
+}
+
+.todo-details-section_task {
+    width: 75%;
+}
+
+.todo-details-section_title {
+    width: 5%;
+}
+
+.todo-details-section_form {
+    position: absolute;
+}
+
+.todo-form-section_fields {
+    display: flex;
+}
+
+
+.todo-status-pending,
+.todo-status-completed {
+    padding: 0 0 0.5em 0.5em;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.todo-status-pending {
+    color: #d08e15;
+}
+
+.todo-status-completed {
+    color: #2f822f;
+}
+
+.todo-details-section-details {
+    display: flex;
+}
+
+.todo-details-section-details_title {
+    width: 6em;
+    text-align: left;
+}
+
+.todo-details-section-details_task {
+    width: 20em;
+    text-align: left;
+}
+
+.todo-details-section-details_buttons {
+    display: flex;
+}
+
+.--hidden {
+    visibility: hidden;
+}

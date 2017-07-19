@@ -1,0 +1,16 @@
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list-header {
+    display: flex;
+    height: 2em;
+    align-items: center;
+    justify-content: center;
+    background: #5d965d;
+    border-top: solid .5em #fff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
